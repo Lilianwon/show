@@ -1,0 +1,69 @@
+:root {
+  /* OKX 绿色主题 - 参考预测市场高级风格 */
+  --okx-green: #00c853;
+  --okx-green-bright: #00e676;
+  --okx-green-dark: #00a843;
+  --okx-green-glow: rgba(0, 200, 83, 0.2);
+  
+  /* 深色背景 - 接近纯黑，高级简洁 */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0c;
+  --bg-card: #0f0f12;
+  --bg-card-hover: #151518;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-light: rgba(255, 255, 255, 0.1);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  --accent-green: #00c853;
+  --accent-red: #f6465d;
+  --accent-pink: #ec4899;
+  --accent-orange: #ff9800;
+  --accent-yellow: #ffc107;
+  --accent-blue: #29b6f6;
+
+  /* Logo 渐变 - 科技感 */
+  --logo-gradient: linear-gradient(135deg, #00e676 0%, #00c853 50%, #00a843 100%);
+  --tech-glow: 0 0 20px rgba(0, 200, 83, 0.15);
+  --tech-glow-strong: 0 0 30px rgba(0, 200, 83, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

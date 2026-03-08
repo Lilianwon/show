@@ -1,0 +1,369 @@
+.analysis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.analysis-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* 平台交易量速览 */
+.volume-overview {
+  margin-bottom: 1rem;
+}
+
+.volume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.volume-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.vt-platform {
+  color: var(--text-secondary);
+}
+
+.vt-volume {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--okx-green);
+  font-weight: 500;
+}
+
+.vt-change {
+  font-size: 0.8rem;
+  color: var(--okx-green);
+}
+
+.vt-change.down {
+  color: var(--accent-red);
+}
+
+.analysis-section,
+.recommendations-section {
+  margin-bottom: 1.5rem;
+}
+
+.analysis-section:last-of-type,
+.recommendations-section {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.vizo-title {
+  color: var(--okx-green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vizo-icon {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* 专业建议卡片 */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
+}
+
+.recommendation-card {
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.06) 0%, var(--bg-card) 50%);
+  border: 1px solid rgba(0, 200, 83, 0.25);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+}
+
+.recommendation-card:hover {
+  border-color: var(--okx-green);
+  box-shadow: 0 0 20px var(--okx-green-glow);
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.rec-category {
+  font-size: 0.75rem;
+  color: var(--okx-green);
+  font-weight: 500;
+}
+
+.rec-priority {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.priority-高 {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+}
+
+.priority-中 {
+  background: rgba(255, 152, 0, 0.2);
+  color: var(--accent-orange);
+}
+
+.recommendation-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.rec-content {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.rec-action {
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+.action-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.action-text {
+  font-size: 0.85rem;
+  color: var(--okx-green);
+  font-weight: 500;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+.analysis-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+}
+
+.analysis-card:hover {
+  border-color: var(--okx-green);
+}
+
+.analysis-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.type-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.type-sentiment-volume {
+  background: rgba(0, 200, 83, 0.2);
+  color: var(--okx-green);
+}
+
+.type-event-impact {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+}
+
+.type-divergence {
+  background: rgba(255, 152, 0, 0.2);
+  color: var(--accent-orange);
+}
+
+.type-correlation {
+  background: rgba(41, 182, 246, 0.2);
+  color: var(--accent-blue);
+}
+
+.type-platform-controversy {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+}
+
+.type-keyword-volume {
+  background: rgba(0, 200, 83, 0.2);
+  color: var(--okx-green);
+}
+
+.impact-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.impact-high {
+  background: rgba(255, 82, 82, 0.15);
+  color: var(--accent-red);
+}
+
+.impact-medium {
+  background: rgba(255, 152, 0, 0.15);
+  color: var(--accent-orange);
+}
+
+.impact-low {
+  background: rgba(139, 154, 171, 0.2);
+  color: var(--text-secondary);
+}
+
+.analysis-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* 热度词条 + 平台交易量 数据行 */
+.analysis-data-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.data-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.data-label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.data-value {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.data-value.keyword {
+  color: var(--okx-green);
+}
+
+.data-volume,
+.data-change {
+  font-size: 0.8rem;
+}
+
+.data-change {
+  color: var(--okx-green);
+}
+
+.data-change.down {
+  color: var(--accent-red);
+}
+
+/* VIZO 建议区块 */
+.analysis-recommendation {
+  padding: 0.75rem;
+  background: rgba(0, 200, 83, 0.08);
+  border-left: 3px solid var(--okx-green);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1rem;
+}
+
+.rec-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--okx-green);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.rec-text {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.analysis-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.analysis-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.data-source {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.confidence-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.confidence-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  min-width: 48px;
+}
+
+.bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--okx-green), var(--okx-green-bright));
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.confidence-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--okx-green);
+}

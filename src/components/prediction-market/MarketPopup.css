@@ -1,0 +1,131 @@
+.market-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: overlay-in 0.25s ease-out;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.market-popup {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 200, 83, 0.08);
+  animation: popup-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.popup-close:hover {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+}
+
+.popup-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.popup-news-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--okx-green);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.popup-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.popup-markets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.popup-market-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: rgba(0, 200, 83, 0.06);
+  border: 1px solid rgba(0, 200, 83, 0.2);
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.popup-market-card:hover {
+  background: rgba(0, 200, 83, 0.12);
+  border-color: rgba(0, 200, 83, 0.4);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 200, 83, 0.15);
+}
+
+.popup-card-odds {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--okx-green);
+}
+
+.popup-card-title {
+  font-size: 0.85rem;
+}
+
+.popup-card-volume {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.popup-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1rem;
+}

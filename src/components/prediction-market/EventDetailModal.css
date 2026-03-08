@@ -1,0 +1,558 @@
+.event-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 2rem;
+  animation: overlay-in 0.25s ease-out;
+}
+
+.event-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.6), 0 0 60px rgba(0, 200, 83, 0.06);
+  animation: modal-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.event-modal.event-modal-fig5 {
+  max-width: 1100px;
+}
+
+.event-modal-fig5 .event-modal-layout {
+  grid-template-columns: 1fr 320px;
+}
+
+/* 图五 - 事件信息卡片 */
+.event-info-card {
+  padding: 1rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.event-category {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--okx-green);
+  margin-bottom: 0.5rem;
+}
+
+.event-info-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.event-asset-icon {
+  font-size: 1.5rem;
+  color: var(--okx-green);
+}
+
+.event-info-header .event-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 1.1rem;
+}
+
+.event-countdown {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* 图五 - 交易量图表卡片 */
+.event-chart-card {
+  padding: 1rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.event-vol-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.event-vol-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--okx-green);
+}
+
+.event-yes-trend {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.trend-up {
+  color: var(--okx-green);
+  margin-left: 0.25rem;
+}
+
+.event-chart-wrap {
+  position: relative;
+  height: 180px;
+  margin-bottom: 0.75rem;
+}
+
+.chart-mid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 82, 82, 0.5);
+  pointer-events: none;
+}
+
+.event-chart-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.market-details-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.time-range-btns {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.time-btn {
+  padding: 0.35rem 0.65rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.time-btn.active {
+  background: rgba(0, 200, 83, 0.15);
+  border-color: rgba(0, 200, 83, 0.4);
+  color: var(--okx-green);
+}
+
+/* 图五 - 右侧交易面板 */
+.event-trade-panel {
+  padding: 1.25rem;
+  background: rgba(17, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.trade-current {
+  font-size: 0.9rem;
+  color: var(--accent-red);
+  margin-bottom: 0.75rem;
+}
+
+.trade-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.trade-tab {
+  padding: 0.4rem 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.trade-tab.active {
+  color: var(--okx-green);
+}
+
+.trade-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--okx-green);
+}
+
+.tab-arrow {
+  margin-left: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.trade-options {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.trade-opt-btn {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.trade-opt-btn.yes {
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  color: #fff;
+}
+
+.trade-opt-btn.no {
+  background: rgba(156, 39, 176, 0.4);
+  color: #fff;
+}
+
+.trade-field {
+  margin-bottom: 1rem;
+}
+
+.trade-field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.trade-owncash, .trade-max {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.trade-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trade-adj {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.trade-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.trade-input.full {
+  width: 100%;
+  margin: 0.35rem 0;
+}
+
+.trade-unit {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.trade-shortcuts {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.trade-shortcuts button {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.trade-summary {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.trade-buy-btn {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.trade-buy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.35);
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.event-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2;
+}
+
+.event-modal-close:hover {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+}
+
+.event-modal-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .event-modal-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.event-volume-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.volume-card {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.12) 0%, rgba(0, 200, 83, 0.04) 100%);
+  border: 1px solid rgba(0, 200, 83, 0.25);
+  border-radius: 12px;
+}
+
+.volume-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.volume-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--okx-green);
+}
+
+.event-ai-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--okx-green);
+}
+
+.section-icon {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.ai-summary,
+.ai-analysis {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.win-rate-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.win-rate-item {
+  display: grid;
+  grid-template-columns: 40px 1fr 50px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.win-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.win-bar-wrap {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.win-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.win-bar.yes {
+  background: linear-gradient(90deg, var(--okx-green-dark), var(--okx-green));
+}
+
+.win-bar.no {
+  background: linear-gradient(90deg, var(--accent-red), #ff8a80);
+}
+
+.win-pct {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.event-sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.purchase-guide {
+  background: linear-gradient(160deg, rgba(0, 200, 83, 0.08) 0%, rgba(0, 200, 83, 0.02) 100%);
+  border: 1px solid rgba(0, 200, 83, 0.25);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.guide-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.guide-odds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.guide-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.guide-option.yes {
+  background: rgba(0, 200, 83, 0.15);
+  border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.guide-option.no {
+  background: rgba(255, 82, 82, 0.1);
+  border: 1px solid rgba(255, 82, 82, 0.2);
+}
+
+.guide-price {
+  font-weight: 700;
+  color: var(--okx-green);
+}
+
+.guide-option.no .guide-price {
+  color: var(--accent-red);
+}
+
+.guide-cta {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.guide-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.35);
+}

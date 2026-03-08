@@ -1,0 +1,379 @@
+.placeholder-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.placeholder-page.full-height {
+  min-height: 100%;
+}
+
+.ph-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ph-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: -0.5rem;
+}
+
+.ph-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.ph-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ph-tab {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.ph-tab.active {
+  color: var(--okx-green);
+}
+
+.ph-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--okx-green);
+}
+
+.ph-time-filters {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.ph-time {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.ph-time.active {
+  color: var(--text-primary);
+  border-color: rgba(0, 200, 83, 0.3);
+}
+
+.ph-empty-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  background: rgba(17, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  min-height: 320px;
+}
+
+.ph-empty-stars {
+  font-size: 1.5rem;
+  color: var(--okx-green);
+  letter-spacing: 0.5rem;
+  animation: star-glow 2s ease-in-out infinite;
+}
+
+@keyframes star-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.ph-empty-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ph-empty-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 360px;
+}
+
+.ph-explore-btn {
+  padding: 0.65rem 1.5rem;
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.ph-explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 200, 83, 0.35);
+}
+
+/* LP Reward */
+.lp-reward-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .lp-reward-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lp-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lp-card {
+  padding: 1.5rem;
+  background: rgba(17, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+}
+
+.lp-partner-card {
+  text-align: center;
+}
+
+.lp-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.lp-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.lp-volume-row {
+  margin-bottom: 0.5rem;
+}
+
+.lp-volume-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.lp-volume-value {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-left: 0.5rem;
+}
+
+.lp-progress-wrap {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.lp-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--okx-green-dark), var(--okx-green));
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.lp-progress-pct {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.lp-rules {
+  margin: 1.25rem 0;
+}
+
+.lp-rules-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lp-info-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 200, 83, 0.2);
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
+
+.lp-rules-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.lp-rule-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lp-tag {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.lp-boost-btn {
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.lp-partner-icon {
+  font-size: 1.5rem;
+  color: var(--okx-green);
+  letter-spacing: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lp-contact {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.lp-contact a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.lp-sidebar {
+  position: sticky;
+  top: 1rem;
+}
+
+.lp-benefits-card {
+  padding: 1.25rem;
+  background: rgba(17, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+}
+
+.lp-benefits-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.lp-benefit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lp-benefit-item:last-child {
+  border-bottom: none;
+}
+
+.lp-benefit-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.lp-benefit-value {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Airdrop */
+.airdrop-card {
+  flex: 1;
+  padding: 2rem;
+  background: rgba(17, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  max-width: 640px;
+}
+
+.airdrop-rules {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.airdrop-attempts-row {
+  margin: 1.25rem 0;
+}
+
+.airdrop-attempts-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.airdrop-attempts-value {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-left: 0.5rem;
+}
+
+.airdrop-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+}
+
+.airdrop-stake-btn {
+  margin-top: 1.5rem;
+}
+
+.airdrop-footer {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}

@@ -1,0 +1,314 @@
+.voting-cards-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* 分类筛选 - 药丸形（参考图一） */
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.category-pill:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.category-pill.active {
+  background: var(--okx-green);
+  border-color: var(--okx-green);
+  color: #fff;
+}
+
+.category-icon {
+  font-size: 1rem;
+}
+
+.voting-cards-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.voting-cards-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.voting-cards-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.voting-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* 卡片入场动效 */
+.voting-card {
+  animation: card-fade-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.voting-card:nth-child(1) { animation-delay: 0.02s; }
+.voting-card:nth-child(2) { animation-delay: 0.04s; }
+.voting-card:nth-child(3) { animation-delay: 0.06s; }
+.voting-card:nth-child(4) { animation-delay: 0.08s; }
+.voting-card:nth-child(5) { animation-delay: 0.1s; }
+.voting-card:nth-child(6) { animation-delay: 0.12s; }
+.voting-card:nth-child(7) { animation-delay: 0.14s; }
+.voting-card:nth-child(8) { animation-delay: 0.16s; }
+.voting-card:nth-child(9) { animation-delay: 0.18s; }
+.voting-card:nth-child(10) { animation-delay: 0.2s; }
+.voting-card:nth-child(11) { animation-delay: 0.22s; }
+.voting-card:nth-child(12) { animation-delay: 0.24s; }
+.voting-card:nth-child(13) { animation-delay: 0.26s; }
+.voting-card:nth-child(14) { animation-delay: 0.28s; }
+.voting-card:nth-child(15) { animation-delay: 0.3s; }
+.voting-card:nth-child(16) { animation-delay: 0.32s; }
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .voting-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .voting-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.voting-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.voting-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 200, 83, 0.4);
+  transform: translateY(-4px);
+  box-shadow: var(--tech-glow-strong), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.voting-card:active {
+  transform: translateY(-1px);
+}
+
+/* 卡片布局 - 参考图二：小图标 + 标题 + Yes/No + 按钮 */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.card-icon-wrap {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.card-icon {
+  font-size: 1.25rem;
+}
+
+.card-title {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.card-options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.opt-yes { color: var(--text-primary); }
+.opt-no { color: var(--text-primary); }
+
+.opt-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
+.opt-dot.yes { background: var(--okx-green); }
+.opt-dot.no { background: var(--accent-pink); }
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.card-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-btn.yes {
+  background: rgba(0, 200, 83, 0.25);
+  color: var(--okx-green);
+}
+
+.card-btn.no {
+  background: rgba(236, 72, 153, 0.25);
+  color: var(--accent-pink);
+}
+
+.card-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.voting-card .card-volume {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* 分页 */
+.voting-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1rem 0 0.5rem;
+  margin-top: auto;
+  flex-shrink: 0;
+  border-top: 1px solid var(--border);
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: rgba(0, 200, 83, 0.12);
+  border-color: rgba(0, 200, 83, 0.4);
+  color: var(--okx-green);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.page-num {
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-num:hover {
+  background: rgba(0, 200, 83, 0.1);
+  border-color: rgba(0, 200, 83, 0.35);
+  color: var(--okx-green);
+}
+
+.page-num.active {
+  background: var(--okx-green);
+  border-color: var(--okx-green);
+  color: #fff;
+}

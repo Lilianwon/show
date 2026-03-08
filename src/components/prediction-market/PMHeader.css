@@ -1,0 +1,195 @@
+.pm-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.pm-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 83, 0.2), transparent);
+  opacity: 0.6;
+}
+
+.pm-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.pm-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: filter 0.25s;
+}
+
+.pm-logo-btn:hover .pm-logo-img {
+  filter: drop-shadow(0 0 6px rgba(0, 200, 83, 0.5));
+}
+
+.pm-logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.pm-logo-btn:hover .pm-logo-img {
+  filter: drop-shadow(0 0 6px rgba(0, 200, 83, 0.35));
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: opacity 0.2s;
+}
+
+.pm-logo-btn:hover {
+  opacity: 0.9;
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: opacity 0.2s;
+}
+
+.pm-logo-btn:hover {
+  opacity: 0.9;
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.pm-logo-btn:hover {
+  opacity: 0.9;
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: opacity 0.2s;
+}
+
+.pm-logo-btn:hover {
+  opacity: 0.85;
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.pm-logo-btn:hover {
+  opacity: 0.9;
+}
+
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  transition: color 0.2s;
+}
+
+.pm-logo-btn:hover {
+  color: var(--okx-green);
+}
+
+.pm-search-wrap {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.pm-search-wrap:focus-within {
+  border-color: rgba(0, 200, 83, 0.4);
+  box-shadow: var(--tech-glow);
+}
+
+.pm-search-icon {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.pm-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.pm-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.pm-connect-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(135deg, var(--okx-green) 0%, var(--okx-green-dark) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.pm-connect-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--tech-glow-strong);
+}
+
+/* Logo 按钮 - 点击返回首页 */
+.pm-logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+.pm-logo-btn:hover {
+  opacity: 0.9;
+}

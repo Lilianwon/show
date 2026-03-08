@@ -1,0 +1,238 @@
+/* 科技感背景：微妙的径向光晕 + 网格纹理 */
+.prediction-market-page {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.prediction-market-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0, 200, 83, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 230, 118, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.prediction-market-page::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.pm-content-wrap {
+  flex: 1 1 0;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.pm-main {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1600px;
+  width: 100%;
+  min-height: 0;
+}
+
+/* 新闻展开时：主区域铺满至最右边，无宽度限制 */
+.news-full-width .pm-main {
+  max-width: none;
+}
+
+/* 新闻展开时：主区域铺满至最右边，无宽度限制 */
+.pm-content-wrap.news-full-width .pm-main {
+  max-width: none;
+  width: 100%;
+}
+
+/* 新闻展开时：主区域铺满至最右边，无宽度限制 */
+.pm-main:has(.news-expanded) {
+  max-width: none;
+  width: 100%;
+}
+
+/* 三列竖式布局：新闻(左) | 投票卡片(右)，两板块等高 */
+.pm-three-columns {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.pm-col-news {
+  width: 280px;
+  flex-shrink: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.pm-col-cards {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease;
+}
+
+.pm-col-cards > * {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 新闻与词条板块等高：两者填满父级 */
+.pm-col-news .news-bar,
+.pm-col-cards .voting-cards-section {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pm-col-news .news-bar .news-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pm-col-news .news-bar .news-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pm-col-news .news-bar .news-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pm-col-news .news-bar .news-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.pm-col-news .news-bar .news-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* 新闻栏与投票卡片等高：两者填满各自列 */
+.pm-col-news .news-bar,
+.pm-col-cards .voting-cards-section {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 新闻栏与词条板块等高：两者均填满列高 */
+.pm-col-news .news-bar,
+.pm-col-cards .voting-cards-section {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 新闻展开时：新闻板块铺满至最右边，挡住投票词条 */
+.pm-three-columns.news-expanded .pm-col-news {
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+.pm-three-columns.news-expanded .pm-col-news .news-bar {
+  width: 100%;
+  max-width: none;
+}
+
+.pm-three-columns.news-expanded .pm-col-cards {
+  display: none;
+}
+
+/* 选中新闻时：左侧新闻列保持可见，右侧显示详情 */
+.pm-three-columns.has-detail .pm-col-news {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* 选中盘口卡片时：隐藏新闻列，盘口详情全宽展示 */
+.pm-three-columns.card-detail .pm-col-news.hidden {
+  display: none;
+}
+
+.pm-three-columns.card-detail .pm-col-cards {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 关闭按钮 - 展开时显示在新闻板块右上角 */
+.news-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.news-close-btn:hover {
+  background: rgba(255, 82, 82, 0.2);
+  color: var(--accent-red);
+  border-color: rgba(255, 82, 82, 0.3);
+}
+
+.placeholder-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.placeholder-page h2 {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,144 @@
+.vertical-nav {
+  width: 120px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.vertical-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(0, 200, 83, 0.15), transparent);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  transition: opacity 0.2s;
+}
+
+.nav-logo:hover {
+  opacity: 0.9;
+}
+
+.nav-logo-img {
+  width: 36px;
+  height: auto;
+  display: block;
+}
+
+.nav-logo:hover .nav-logo-img {
+  filter: drop-shadow(0 0 8px rgba(0, 200, 83, 0.4));
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--okx-green);
+  background: rgba(0, 200, 83, 0.08);
+}
+
+.nav-link.active {
+  color: var(--okx-green);
+  background: rgba(0, 200, 83, 0.12);
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.15);
+}
+
+.nav-link.active .nav-dot {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 8px var(--okx-green);
+}
+
+.nav-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--okx-green);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover .nav-dot {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+.nav-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--okx-green);
+  animation: live-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes live-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--okx-green); }
+  50% { opacity: 0.5; box-shadow: none; }
+}
+
+/* Logo 按钮样式 - 点击返回首页 */
+button.nav-logo {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+button.nav-logo:hover {
+  opacity: 0.9;
+}
