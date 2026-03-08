@@ -1,0 +1,26 @@
+{
+  "name": "vizo-prediction-market",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:full": "concurrently -n api,vite -c green,blue \"node server.js\" \"vite\"",
+    "start": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "node server.js"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.13.1",
+    "recharts": "^2.10.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.3.1",
+    "vite": "^5.0.8"
+  }
+}
